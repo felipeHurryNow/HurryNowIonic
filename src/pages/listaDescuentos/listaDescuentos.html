@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+    	Hurry NOW!
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item *ngFor = "let item of items" >
+			<ion-thumbnail *ngIf = "item.data.thumbnail"  item-left>
+				<img src = "{{item.data.thumbnail}}">
+			</ion-thumbnail>
+			<button ion-button (click)="generarDescuento();">
+				Comprar
+			</button>
+			<h2>{{item.data.title}}</h2>
+			<p>
+				<ion-icon name = "thumbs-up">
+					{{item.data.score}}
+				</ion-icon>
+				<ion-icon name = "chatboxes">
+					{{item.data.num_comments}}
+				</ion-icon>
+				
+			</p>
+		</ion-item>
+	</ion-list> 
+
+</ion-content>
