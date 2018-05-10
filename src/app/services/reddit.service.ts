@@ -9,10 +9,11 @@ export class RedditService{
 
     constructor(http : HttpClient){
         this.http = http;
-        this.baseUrl = 'https://www.reddit.com/r';
+        this.baseUrl = 'http://localhost:8080/products/';
     }
 
     getPosts(category, limit){
-        return this.http.get(this.baseUrl+'/'+category+'/top.json?limit='+limit);
+        return this.http.get(this.baseUrl);
     }
+
 }
