@@ -13,19 +13,19 @@
 <ion-content padding>
 	<ion-list>
 		<ion-item *ngFor = "let item of items" >
-			<ion-thumbnail *ngIf = "item.data.thumbnail"  item-left>
-				<img src = "{{item.data.thumbnail}}">
+			<ion-thumbnail *ngIf = "item.thumbnail"  item-left>
+				<img src = "{{item.thumbnail}}">
 			</ion-thumbnail>
 			<button ion-button (click)="generarDescuento();">
 				Comprar
 			</button>
-			<h2>{{item.data.description}}</h2>
+			<h2>{{item.description}}</h2>
 			<p>
 				<ion-icon name = "thumbs-up">
-					{{item.data.description}}
+					{{item.description}}
 				</ion-icon>
 				<ion-icon name = "chatboxes">
-					{{item.data.description}}
+					{{item.description}}
 				</ion-icon>
 
 			</p>
