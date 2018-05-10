@@ -16,4 +16,8 @@ export class RedditService{
         return this.http.get(this.baseUrl);
     }
 
+    getPostId(category, limit){
+        return this.http.get(this.baseUrl+'/1/1');
+    }
+
 }

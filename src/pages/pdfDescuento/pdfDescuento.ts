@@ -14,14 +14,10 @@ export class PdfDescuentoPage {
   }
 
 
-  ngOnInit(){
-  	this.getPosts('sports', 5);
-  }
-
 
   getPosts(category, limit){
   	this.redditService.getPosts(category, limit).subscribe(response => {
-  		this.items = response.data.children;
+  		this.items = response
   	});
   }
 

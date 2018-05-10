@@ -21,7 +21,7 @@ export class ListaDescuentosPage {
 
   getPosts(category, limit){
   	this.redditService.getPosts(category, limit).subscribe(response => {
-  		this.items = response.description;
+  		this.items = response;
   	});
   }
 
