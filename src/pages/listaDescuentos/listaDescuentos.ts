@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App } from 'ionic-angular';
 import { RedditService} from '../../app/services/reddit.service';
 import { PdfDescuentoPage } from '../pdfDescuento/pdfDescuento';
 
@@ -10,22 +10,45 @@ import { PdfDescuentoPage } from '../pdfDescuento/pdfDescuento';
 })
 export class ListaDescuentosPage {
   items: any;
-  constructor(public navCtrl: NavController, private redditService:RedditService) {
+  // var product;
+  paramsParaSegPag: Object;
+
+  constructor(public navCtrl: NavController, private redditService:RedditService, public app: App) {
   }
 
 
   ngOnInit(){
-  	this.getPosts('sports', 5);
+  	this.getPosts();
   }
 
 
-  getPosts(category, limit){
-  	this.redditService.getPosts(category, limit).subscribe(response => {
+  getPosts(){
+  	this.redditService.getPosts().subscribe(response => {
   		this.items = response;
   	});
   }
 
-  generarDescuento(){
-    this.navCtrl.push(PdfDescuentoPage);
+  generarDescuento(idProduct){
+    var id = idProduct;
+    this.getProductById(id);
+    //this.navCtrl.push(PdfDescuentoPage);
+
+  }
+
+  getProductById(idProduct){
+    this.redditService.getPostId(idProduct).subscribe(response => {
+  	var product = response;
+    // this.paramsParaSegPag = {
+    //     description: product.
+    //   };
+    this.app.getRootNav().setRoot(PdfDescuentoPage,{  product: product} );
+    var string = "hola";
+  	});
+
+
+    //this.navCtrl.push(PdfDescuentoPage, this.paramsParaSegPag);
+
+
+
   }
 }

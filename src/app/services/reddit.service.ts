@@ -12,12 +12,12 @@ export class RedditService{
         this.baseUrl = 'http://localhost:8080/products/';
     }
 
-    getPosts(category, limit){
+    getPosts(){
         return this.http.get(this.baseUrl);
     }
 
-    getPostId(category, limit){
-        return this.http.get(this.baseUrl+'/1/1');
+    getPostId(idProduct){
+        return this.http.get(this.baseUrl+idProduct+"/"+idProduct);
     }
 
 }

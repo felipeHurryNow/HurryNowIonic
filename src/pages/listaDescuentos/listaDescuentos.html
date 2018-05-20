@@ -15,7 +15,7 @@
       <div class="image">
       	<img src = "data:image/jpg;base64,{{item.imageProduct}}">
       </div>
-			<button ion-button (click)="generarDescuento();">
+			<button ion-button (click)="generarDescuento(item.idProduct.idProduct);">
 				Comprar
 			</button>
 			<h2>{{item.description}}</h2>
