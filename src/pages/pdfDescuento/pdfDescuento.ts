@@ -13,12 +13,9 @@ export class PdfDescuentoPage {
   param: any;
   constructor(public navCtrl: NavController, private redditService:RedditService, public navParams: NavParams) {
     this.param = this.navParams.get('product')
-    var string = "hola";
+  
   }
-  // ionViewDidLoad() {
-  //   let product = this.navParams.get('product')
-  //   var string = "hola";
-  // }
+
   getProduct(product){
     var pr = product;
   }

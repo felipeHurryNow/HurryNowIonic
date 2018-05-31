@@ -13,16 +13,21 @@
 <ion-content padding>
 
 	<tr>
-		<td>
-			<img src="data:image/jpg;base64,{{param.imageProduct}}" alt="Mountain View" width="150" height="150"/>
+		<td align="center">
+      <h1 class="titleProduct">{{param.description}}</h1>
+			<img  class="image" src="data:image/jpg;base64,{{param.imageProduct}}" alt="Mountain View" width="150" height="150"/>
 		</td>
 	</tr>
 	<tr>
 		<table>
 			<tbody>
 				<tr>
-					<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/220px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="" />
-					<td><h1>15% de descuento</h1></td>
+					<td class="infoProduct">
+            <img  class="imageStore" src="data:image/jpg;base64,{{param.store.imageStore}}" />
+            <h4 class="precio">Precio: ${{param.price}}.000</h4>
+            <h5 class="location"> {{param.branchOffice.name}} - Local: {{param.branchOffice.local}}</h5>
+            <h6 class="atention"> Horario:  {{param.branchOffice.atentionTime}}</h6>
+          </td>
 				</tr>
 			</tbody>
 		</table>
@@ -32,7 +37,7 @@
 
 
 	</tr>
-	<tr>
+	<!-- <tr>
 		<td>
 			<p>
 				<b>El menú incluye:</b>
@@ -41,15 +46,19 @@
 				Bacon Shack: bacon, queso, tomate, cebolla y lechuga.
 				Chicken Shack: pechuga de pollo crispy, mayonesa, tomate y lechuga.
 				<b>Bebida por persona a elegir entre:</b>
-				<!--<b>{{item[0].description}}</b>-->
+				<b>{{item[0].description}}</b>
 				Cerveza.
 				Refresco.
 				Agua.
 			</p>
 		</td>
-	</tr>
+	</tr> -->
 	<tr>
-		<td><h2>{{param.description}}</h2></td>
+    <td class="qr"><img class="qrImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/220px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="" />
+
+		<!-- <td>
+      <p> Precio: {{param.price}}
+    </td> -->
 	</tr>
 
 </ion-content>
