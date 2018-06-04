@@ -156,10 +156,16 @@ table tr {
 // table th,
 td.infoProduct {
 
-  padding: 10px;
-  text-align: center;
-  background: #0083B0
 
+  padding: 10px;
+  text-align: justify;
+  background: #0083B0;
+
+}
+
+td.imageStoretd{
+  background: #0083B0;
+  align-content: flex-start;
 }
 
 td.qr{
@@ -187,8 +193,8 @@ img.image{
 }
 
 img.imageStore{
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   /* los siguientes valores son independientes del tamaño del círculo */
   margin-top: 5px;
   margin-bottom: 5px;
