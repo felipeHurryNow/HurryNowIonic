@@ -38,10 +38,11 @@ export class ListaDescuentosPage {
   getProductById(idProduct){
     this.redditService.getPostId(idProduct).subscribe(response => {
   	var product = response;
+    var idProduct = response.idProduct.idProduct.toString();
     // this.paramsParaSegPag = {
     //     description: product.
     //   };
-    this.app.getRootNav().setRoot(PdfDescuentoPage,{  product: product} );
+    this.app.getRootNav().setRoot(PdfDescuentoPage,{  product: product, idProduct: idProduct} );
     var string = "hola";
   	});
 

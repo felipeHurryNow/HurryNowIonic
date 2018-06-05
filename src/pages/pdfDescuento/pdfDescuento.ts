@@ -11,9 +11,11 @@ import { LoginPage } from '../login/login';
 export class PdfDescuentoPage {
   items: any;
   param: any;
+  idProduct: any;
   constructor(public navCtrl: NavController, private redditService:RedditService, public navParams: NavParams) {
     this.param = this.navParams.get('product')
-  
+    this.idProduct = this.navParams.get('idProduct')
+
   }
 
   getProduct(product){

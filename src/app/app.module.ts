@@ -11,6 +11,7 @@ import { PdfDescuentoPage } from '../pages/pdfDescuento/pdfDescuento';
 
 import { RedditService } from './services/reddit.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    NgxQRCodeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
