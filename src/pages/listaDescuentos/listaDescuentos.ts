@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, App } from 'ionic-angular';
 import { RedditService} from '../../app/services/reddit.service';
 import { PdfDescuentoPage } from '../pdfDescuento/pdfDescuento';
+import { MapsPage } from '../maps/maps';
+
 
 
 @Component({
@@ -48,8 +50,9 @@ export class ListaDescuentosPage {
 
 
     //this.navCtrl.push(PdfDescuentoPage, this.paramsParaSegPag);
+  }
 
-
-
+  openPageMap(){
+    this.navCtrl.setRoot(MapsPage);
   }
 }

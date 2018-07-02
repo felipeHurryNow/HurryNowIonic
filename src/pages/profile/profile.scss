@@ -1,0 +1,81 @@
+page-profile {
+
+  img.image{
+    // height: 200px;
+    // width: 200px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+  }
+
+  h6.name{
+    margin-top: 10px;
+    color: #0083B0;
+    text-align: center;
+
+  }
+
+  h6.mail{
+    margin-top: 10px;
+    color: #00bfff;
+    text-align: center;
+    background-size: 5px;
+  }
+
+  table.name{
+    margin-top: 10px;
+    background-color:  transparent;
+    align-items: center;
+  }
+  table.mail{
+    background-color:  transparent;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  table.ubication{
+    background-color:  transparent;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  td.icon{
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+    margin-right: 0px;
+    margin-left:  0px;
+  }
+
+  td.points{
+    background:#0083B0;
+  }
+
+  ion-icon.star{
+    color: #efb810;
+  }
+
+  h6.points{
+    color: #efb810;
+    font-weight: bold;
+  }
+  ion-icon{
+    color: #6666ff
+  }
+
+  tbody.infoUser{
+    background: #ffffff
+  }
+
+  button.logout{
+    background: #0083B0;
+    color: #ffffff;
+    margin-top: 90px;
+  }
+
+}

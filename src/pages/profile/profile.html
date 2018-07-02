@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+    	Tu Perfil
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <tr>
+    <td align="center" class="points">
+			<img  class="image" src="assets/imgs/man.png" />
+		</td>
+  </tr>
+
+  <tr>
+
+    <td align="center" class="points" >
+			<h6 class="points">Puntos: \n 1538</h6>
+      <ion-icon name="star" class="star"></ion-icon>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<table>
+			<tbody class="infoUser">
+          <!-- <td class="imageStoretd">
+            <img  class="imageStore" src="data:image/jpg;base64,{{param.store.imageStore}}" />
+          </td> -->
+
+        <table class="name">
+            <td class="icon">
+              <ion-icon name="person"></ion-icon>
+            </td>
+            <td class="text">
+              <h6 class="name">Daniel Felipe Tarquino Murgueitio</h6>
+            </td>
+
+        </table>
+
+        <table class="mail">
+            <td class="icon">
+              <ion-icon name="mail"></ion-icon>
+            </td>
+            <td class="text">
+              <h6 class="mail">felipe.tarquinom@outlook.com</h6>
+            </td>
+        </table>
+
+        <table class="ubication">
+            <td class="icon">
+              <ion-icon name="pin"></ion-icon>
+            </td>
+            <td class="text">
+              <h6 class="mail">Bogotá, Colombia</h6>
+            </td>
+        </table>
+
+			</tbody>
+		</table>
+
+	</tr>
+	<tr align="center">
+    <button  class="logout" ion-button (click)="cerrarSesion();" clear>
+      Cerrar sesión
+    </button>
+	</tr>
+
+
+</ion-content>
