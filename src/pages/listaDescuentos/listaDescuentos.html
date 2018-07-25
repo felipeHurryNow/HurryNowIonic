@@ -1,17 +1,26 @@
-<ion-header>
+<!--<ion-header>
 
   <ion-buttons start>
-    <button ion-button menuToggle>
+    button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-
     <button ion-button (click)="openPageMap();">
       Ver tiendas
     </button>
   </ion-buttons>
 
   <ion-navbar>
-
+  	<
+    <ion-title>
+    	Hurry NOW!
+    </ion-title>
+  </ion-navbar>
+</ion-header>-->
+<ion-header>  
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
     	Hurry NOW!
     </ion-title>
@@ -19,28 +28,38 @@
 </ion-header>
 
 <ion-content padding>
-
-
-
 	<ion-list>
 		<ion-item *ngFor = "let item of items" >
-      <div class="image">
-      	<img src = "data:image/jpg;base64,{{item.imageProduct}}">
-      </div>
-			<button ion-button (click)="generarDescuento(item.idProduct.idProduct);">
-				Comprar
-			</button>
-			<h2>{{item.description}}</h2>
-			<p>
-				<ion-icon name = "thumbs-up">
-					{{item.price}}
-				</ion-icon>
-				<ion-icon name = "chatboxes">
-					{{item.store.name}} - {{item.branchOffice.name}}
-				</ion-icon>
+			<ion-grid>
+				<ion-row>
+					<ion-col width-50>
+						<div class="image">
+				      		<img src = "data:image/jpg;base64,{{item.imageProduct}}">
+				      	</div>
+				     </ion-col>
+				     <ion-col width-50>
+						<h2>{{item.description}}</h2>
+						<p>
+							<ion-icon name = "thumbs-up">
+								{{item.price}}
+							</ion-icon>
+							<ion-icon name = "chatboxes">
+								{{item.store.name}} - {{item.branchOffice.name}}
+							</ion-icon>
 
-			</p>
+						</p>
+						<button ion-button (click)="generarDescuento(item.idProduct.idProduct);">
+							Comprar
+						</button>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
 		</ion-item>
 	</ion-list>
 
 </ion-content>
+<ion-footer>
+	<button ion-button (click)="openPageMap();" full>
+	  Ver tiendas
+	</button>
+</ion-footer>

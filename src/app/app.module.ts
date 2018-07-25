@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, NgZone } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
+import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
 
 import { MyApp } from './app.component';
 import { ListaDescuentosPage } from '../pages/listaDescuentos/listaDescuentos';
@@ -20,6 +21,8 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { RedditService } from './services/reddit.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,9 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     SplashScreen,
     GoogleMaps,
     Geolocation,
+    BackgroundGeolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LocalNotifications,
     RedditService
   ]
 })

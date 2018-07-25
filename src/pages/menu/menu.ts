@@ -41,6 +41,7 @@ export class MenuPage {
 
   }
 
+
   isActive(page: PageInterface){
 
   }
