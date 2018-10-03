@@ -1,63 +1,3 @@
-// import { Component } from '@angular/core';
-// import { NavController } from 'ionic-angular';
-// import { Geolocation } from '@ionic-native/geolocation';
-//
-// import {
-//   GoogleMaps,
-//   GoogleMap,
-//   GoogleMapsEvent,
-//   GoogleMapOptions,
-//   CameraPosition,
-//   MarkerOptions,
-//   Marker
-//  } from '@ionic-native/google-maps';
-//
-// @Component({
-//   selector: 'page-maps',
-//   templateUrl: 'maps.html'
-// })
-// export class MapsPage {
-//   map:GoogleMap;
-//   lat:any; lang:any;
-//   constructor(private geolocation: Geolocation, public navCtrl: NavController) {
-//     this.loadGoogleMap();
-//
-//   }
-//   loadGoogleMap(){
-//     let mapOptions: GoogleMapOptions = {
-//       camera: {
-//         target: {
-//           lat: 43.0741904,
-//           lng: -89.3809802
-//         },
-//         zoom: 18,
-//         tilt: 30
-//       }
-//     };
-//     this.map = new GoogleMaps.create('map_canvas', mapOptions);
-//     this.map.one(GoogleMapsEvent.MAP_READY)
-//       .then(() => {
-//         this.map.addMarker({
-//             title: 'Ionic',
-//             icon: 'blue',
-//             animation: 'DROP',
-//             position: {
-//               lat: 43.0741904,
-//               lng: -89.3809802
-//             }
-//           })
-//           .then(marker => {
-//             marker.on(GoogleMapsEvent.MARKER_CLICK)
-//               .subscribe(() => {
-//
-//               });
-//           });
-//
-//       });
-//   }
-//
-// }
-
 import { Component, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { NavController, AlertController, Platform } from 'ionic-angular';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation';
@@ -81,24 +21,25 @@ export class MapsPage {
   public lng: number = 0;
 
 
-  constructor(public navCtrl: NavController, private alertCtrlr:AlertController, private platform:Platform, private localNotifications:LocalNotifications,
-    private backgroundGeolocation: BackgroundGeolocation, public zone: NgZone, public geolocation: Geolocation) {
-
+  constructor(public navCtrl: NavController, 
+              private alertCtrlr:AlertController, 
+              private platform:Platform, 
+              private localNotifications:LocalNotifications,
+              private backgroundGeolocation: BackgroundGeolocation, 
+              private zone: NgZone, 
+              private geolocation: Geolocation) {
   }
 
   ionViewDidLoad(){
     locations.push("4.70220849, -74.041989", "4.6188864, -74.1354241", "4.5902, -74.1244");
-    this.loadMap();
-
+    this.platform.ready().then(() => this.loadMap());
   }
 
-  loadMap(){
+  loadMap() : any{
     var dist = 1; //Rango dentro del cual se buscaran promociones;
 
-    this.geolocation.getCurrentPosition().then((position) => {
-
+    //this.geolocation.getCurrentPosition().then((position) => {
       let latLng = new google.maps.LatLng(4.702978, -74.0344);   //(position.coords.latitude, position.coords.longitude);
-
       let mapOptions = {
         center: latLng,
         zoom: 15,
@@ -109,14 +50,23 @@ export class MapsPage {
       this.addMarker();
       this.addMarkerSales();
 
-    }, (err) => {
-      console.log(err);
-    });
+    /*}).catch((error) => {
+        // Load the map even if we fail
+        this.loadMapFallback();
+        alert("NO cargo el mapa, "+ error);
+        console.log(error);
+    });*/
     this.closeDiscount(dist);
     this.startTracking();
   }
 
+  loadMapFallback() {
+    let mapEle: HTMLElement = document.getElementById('map');
 
+    this.map = new google.maps.Map(mapEle, {
+        zoom: 12
+    });
+  }
 
   addMarker(){
 
@@ -155,17 +105,7 @@ export class MapsPage {
           position: new google.maps.LatLng(lat, lng)
 
         });
-
-         //if you are expecting a user to input a single pair of coordinates in the input box you will need to do this
-
      }
-
-
-
-  // let content = "<h4>Information!</h4>";
-  //
-  // this.addInfoWindow(marker, content);
-
   }
 
 scheduleNotification(){

@@ -9,7 +9,7 @@ export class RedditService{
 
     constructor(http : HttpClient){
         this.http = http;
-        this.baseUrl = 'http://localhost:8080/products/';
+        this.baseUrl = 'https://enigmatic-castle-44315.herokuapp.com/products/';
     }
 
     getPosts(){
